@@ -1,0 +1,25 @@
+body{
+    margin: 0 auto;
+}
+.title{
+    font-size:25px;
+    text-align: center;
+    padding-top: 20px;
+}
+table{
+    width: 90%;
+    margin-left: 55px;
+    margin-top: 50px;
+}
+.add{
+    width: 80px;
+    height: 40px;
+    background: #00008B;
+    color: #fff;
+    float: right;
+    border-radius: 5px;
+    margin-right: 80px;
+}
+a.edit{color:#00008B;}
+a.delete{color:#00008B}
+#add{border: 1px solid #00008B;width: 30%; }

@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/', 'ManagerPosts@index');
+Route::get('/add', 'ManagerPosts@add');
+Route::get('/edit', 'ManagerPosts@edit');
+Route::post('/addpost', 'ManagerPosts@addpost');
+Route::post('/delete', 'ManagerPosts@delete');
 
 /*
 |--------------------------------------------------------------------------
