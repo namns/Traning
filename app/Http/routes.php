@@ -16,8 +16,9 @@
 //});
 Route::get('/', 'ManagerPosts@index');
 Route::get('/add', 'ManagerPosts@add');
-Route::get('/edit', 'ManagerPosts@edit');
+Route::get('/edit/{id}', 'ManagerPosts@edit');
 Route::post('/addpost', 'ManagerPosts@addpost');
+Route::post('/editpost', 'ManagerPosts@editpost');
 Route::post('/delete', 'ManagerPosts@delete');
 
 /*

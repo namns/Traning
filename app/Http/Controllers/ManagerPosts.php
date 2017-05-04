@@ -68,4 +68,22 @@ class ManagerPosts extends Controller
                 ], 200);
             }
     }
+    public function edit(Request $request){
+        $id=$request->id;
+        $data=Post::where('id',$id)->get();
+        return view('edit-post',['data'=>$data]);
+    }
+    public function editpost(Request $request){
+        $id=$request->input('id');
+        $code = $request->input('code');
+        $title = $request->input('title');
+        $despction = $request->input('despction');
+        DB::table('post')
+            ->where('id', $id)
+            ->update(['code' =>$code,
+                'title'=>$title,
+                'despction'=>$despction
+            ]);
+        return redirect('/');
+    }
 }

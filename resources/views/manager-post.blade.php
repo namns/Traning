@@ -31,7 +31,7 @@
                 <td>{{$data['code']}}</td>
                 <td>{{$data['title']}}</td>
                 <td>{{$data['despction']}}</td>
-                <td><button class="edit">edit</button></td>
+                <td><a href="/edit/{{$data['id']}}">edit</a></td>
                 <td><button class="delete" onclick="javascript:deletepost({{$data['id']}})" id="delete-post" value="{{$data['id']}}">delete</button></td>
             </tr>
             <?php endforeach;?>
