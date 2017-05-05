@@ -86,4 +86,22 @@ class ManagerPosts extends Controller
             ]);
         return redirect('/');
     }
+    public function copy(Request $request){
+        $id=$request->input('id');
+        $data=DB::table('post')
+            ->where('id', $id)->get();
+        unset($data[0]->id);
+        $item = array([
+            "code"  => $data[0]->code,
+            "title" => $data[0]->title,
+            "despction" => $data[0]->despction
+        ]);
+        $save=DB::table('post')->insert($item );
+        if ($save) {
+            return response()->json([
+                'status' => 'success',
+                'errors' => [],
+            ], 200);
+        }
+    }
 }

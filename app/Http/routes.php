@@ -20,6 +20,7 @@ Route::get('/edit/{id}', 'ManagerPosts@edit');
 Route::post('/addpost', 'ManagerPosts@addpost');
 Route::post('/editpost', 'ManagerPosts@editpost');
 Route::post('/delete', 'ManagerPosts@delete');
+Route::post('/copy', 'ManagerPosts@copy');
 
 /*
 |--------------------------------------------------------------------------

@@ -20,6 +20,9 @@ table{
     border-radius: 5px;
     margin-right: 80px;
 }
-a.edit{color:#00008B;}
+.delete{background: red;color: #fff;border-radius: 3px;text-align: center;}
+.copy{background:#008000;color: #fff;border-radius: 3px;text-align: center;}
+.edit{text-align: center;background: #00008B;color: #fff;}
+a.edit{color:#00008B; }
 a.delete{color:#00008B}
 #add{border: 1px solid #00008B;width: 30%; }

@@ -23,6 +23,7 @@
                 <th>title</th>
                 <th>despction</th>
                 <th>edit</th>
+                <th>copy</th>
                 <th>delete</th>
             </tr>
             <?php foreach ($post as $key =>$data):?>
@@ -31,8 +32,9 @@
                 <td>{{$data['code']}}</td>
                 <td>{{$data['title']}}</td>
                 <td>{{$data['despction']}}</td>
-                <td><a href="/edit/{{$data['id']}}">edit</a></td>
-                <td><button class="delete" onclick="javascript:deletepost({{$data['id']}})" id="delete-post" value="{{$data['id']}}">delete</button></td>
+                <td style="text-align: center;"><button onclick="javascript:editpost({{$data['id']}})" class="edit">edit</button></td>
+                <td style="text-align: center;"><button class="copy" onclick="javascript:copypost({{$data['id']}})" >copy</button></td>
+                <td style="text-align: center;"><button class="delete" onclick="javascript:deletepost({{$data['id']}})" id="delete-post" value="{{$data['id']}}">delete</button></td>
             </tr>
             <?php endforeach;?>
         </table>

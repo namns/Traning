@@ -14,6 +14,21 @@ function deletepost(id){
             }
         });
 }
+function copypost(id){
+    $.ajax({
+        url: '/copy',
+        data: {'id': id},
+        type: 'POST',
+        success: function (data) {
+            if (data.status == "success") {
+                location.reload();
+            }
+        }
+    });
+}
+function editpost(id){
+    window.location.href = "/edit/"+id;
+}
 // $(document).ready(function() {
 //     $("#delete-post").click(function () {
 //         id = $(this).val();
