@@ -26,9 +26,9 @@
                 <th>copy</th>
                 <th>delete</th>
             </tr>
-            <?php foreach ($post as $key =>$data):?>
+             @foreach ($post as $data)
             <tr>
-                <td><?php echo $data['id'];?></td>
+                <td>{{$data['id']}}</td>
                 <td>{{$data['code']}}</td>
                 <td>{{$data['title']}}</td>
                 <td>{{$data['despction']}}</td>
@@ -36,7 +36,7 @@
                 <td style="text-align: center;"><button class="copy" onclick="javascript:copypost({{$data['id']}})" >copy</button></td>
                 <td style="text-align: center;"><button class="delete" onclick="javascript:deletepost({{$data['id']}})" id="delete-post" value="{{$data['id']}}">delete</button></td>
             </tr>
-            <?php endforeach;?>
+            @endforeach
         </table>
     </div>
 </div>

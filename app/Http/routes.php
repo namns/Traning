@@ -14,11 +14,14 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/', 'ManagerPosts@index');
+Route::get('/', 'UserManager@index');
+Route::post('/login', ['as' => 'login', 'uses' => 'UserManager@login']);
+Route::get('/user', ['as' => 'user', 'uses' => 'UserManager@user']);
+Route::get('/post', 'ManagerPosts@index');
 Route::get('/add', 'ManagerPosts@add');
 Route::get('/edit/{id}', 'ManagerPosts@edit');
-Route::post('/addpost', 'ManagerPosts@addpost');
-Route::post('/editpost', 'ManagerPosts@editpost');
+Route::post('/addpost', ['as' => 'add-post', 'uses' => 'ManagerPosts@addpost']);
+Route::post('/editpost', ['as' => 'edit-post', 'uses' => 'ManagerPosts@editpost']);
 Route::post('/delete', 'ManagerPosts@delete');
 Route::post('/copy', 'ManagerPosts@copy');
 

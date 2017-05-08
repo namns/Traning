@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBlogPostRequest;
 use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\DB;
@@ -17,34 +18,14 @@ class ManagerPosts extends Controller
     public function index()
     {
         $post=Post::get();
-       return view('manager-post',['post'=>$post]);
+       return view('post/manager-post',['post'=>$post]);
     }
     public function add()
     {
-        return view('add');
+        return view('post/add');
     }
-    public function addpost(Request $request)
+    public function addpost(StoreBlogPostRequest $request)
     {
-        $rule = [
-            'code' => 'required',
-            'title' => 'required',
-            'despction' => 'required'
-        ];
-
-        $messages=[
-            'code.required' => 'code k duoc bo trong',
-            'title.required' => 'tieu de k dc bo rong',
-            'despction.required' => 'noi dung k dc bo trong',
-        ];
-
-        $validator = Validator::make($request->all(), $rule, $messages);
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => 'faild',
-                'errors' => json_decode($validator->messages()->toJson()),
-
-            ], 200);
-        }
 
         $code = $request->input('code');
         $title = $request->input('title');
@@ -71,9 +52,9 @@ class ManagerPosts extends Controller
     public function edit(Request $request){
         $id=$request->id;
         $data=Post::where('id',$id)->get();
-        return view('edit-post',['data'=>$data]);
+        return view('post/edit-post',['data'=>$data]);
     }
-    public function editpost(Request $request){
+    public function editpost(StoreBlogPostRequest $request){
         $id=$request->input('id');
         $code = $request->input('code');
         $title = $request->input('title');
