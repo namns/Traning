@@ -36,7 +36,7 @@ class ManagerPosts extends Controller
             "despction" => $despction
         ]);
         DB::table('post')->insert($item );
-        return redirect('/');
+        return redirect('/post');
     }
     public function delete(Request $request)
     {
@@ -65,7 +65,7 @@ class ManagerPosts extends Controller
                 'title'=>$title,
                 'despction'=>$despction
             ]);
-        return redirect('/');
+        return redirect('/post');
     }
     public function copy(Request $request){
         $id=$request->input('id');

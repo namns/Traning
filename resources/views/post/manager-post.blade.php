@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>manager-post</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-</head>
-<style>
-    table, th, td {
-        border: 1px solid black;
-    }
-</style>
-<body>
-<div class="container">
-    <div class="content">
+@include('template/header')
         <div class="title">manager-post</div>
         <button class="add" onclick="javascript:addpost()">add</button>
         <table>

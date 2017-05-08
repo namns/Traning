@@ -16,7 +16,15 @@
 //});
 Route::get('/', 'UserManager@index');
 Route::post('/login', ['as' => 'login', 'uses' => 'UserManager@login']);
+
+//user
 Route::get('/user', ['as' => 'user', 'uses' => 'UserManager@user']);
+Route::get('/adduser', 'UserManager@adduser');
+Route::post('/deleteuser',  'UserManager@deleteuser');
+Route::post('/saveuser', ['as' => 'add-user', 'uses' => 'UserManager@saveuser']);
+Route::get('/getuser/{id}',  'UserManager@getuser');
+Route::post('/edituser', ['as' => 'edit-user', 'uses' => 'UserManager@edituser']);
+//post
 Route::get('/post', 'ManagerPosts@index');
 Route::get('/add', 'ManagerPosts@add');
 Route::get('/edit/{id}', 'ManagerPosts@edit');

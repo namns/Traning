@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class StoreBlogPostRequest extends Request
+class StoreUserRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,17 +24,20 @@ class StoreBlogPostRequest extends Request
     public function rules()
     {
         return [
-                'code' => 'required',
-                'title' => 'required',
-                'despction' => 'required'
+            'username' => 'required|unique:user',
+            'password' => 'required',
+            'fullname' => 'required'
         ];
+
     }
-    public function messages()
+    public function merge(array $input)
     {
         return [
-            'code.required' => 'Please enter code',
-            'title.required' => 'Please enter title',
-            'despction.required' => 'Please enter despction',
+            'username.unique' => 'username already exists',
+            'username.required' => 'Please enter username',
+            'password.required' => 'Please enter password',
+            'fullname.required' => 'Please enter fullname',
         ];
+
     }
 }
