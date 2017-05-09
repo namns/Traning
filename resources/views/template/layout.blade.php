@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>manager-post</title>
+    <title>manager</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -55,10 +55,8 @@
 @yield('content')
 <footer>
     <p>Posted by: Hege Refsnes</p>
-    <p>Contact information: <a href="mailto:namns1102@gmail.com">someone@example.com</a>.</p>
-</footer>
-
-        <p><strong>Note:</strong> The footer tag is not supported in Internet Explorer 8 and earlier versions.</p>
+    <p>Contact information: <a href="mailto:namns1102@gmail.com">mail-to</a>.</p>
+    <p><strong>Note:</strong> The footer tag is not supported in Internet Explorer 8 and earlier versions.</p>
 </footer>
 </body>
 </html>

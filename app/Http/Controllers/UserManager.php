@@ -31,6 +31,10 @@ class UserManager extends Controller
             ->update(['remember_token' => $request->_token]);
             return redirect('/user');
         }
+        else{
+            $error = "username or password wrong";
+            return redirect()->back()->withErrors(['error'=>$error]);
+        }
     }
     public function user(){
 

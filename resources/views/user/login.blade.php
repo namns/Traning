@@ -74,6 +74,9 @@
 
     <div class="container">
         <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+        @if (count($errors) > 0)
+            <p class="help-block" style="color: red;">{{ $errors->first() }}</p>
+        @endif
         <label><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="username" required>
 
