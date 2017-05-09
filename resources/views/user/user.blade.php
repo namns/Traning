@@ -1,4 +1,6 @@
-@include('template/header')
+{{--@include('template/header')--}}
+@extends('template.layout')
+@section('content')
 <div class="title">user-list</div>
         <button class="add" onclick="javascript:adduser()">add</button>
         <table>
@@ -23,8 +25,7 @@
         </table>
     </div>
 </div>
-</body>
+
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="{{ URL::asset('js/user.js') }}"></script>
-
-</html>
+@endsection

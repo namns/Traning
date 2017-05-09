@@ -1,4 +1,6 @@
-@include('template/header')
+{{--@include('template/header')--}}
+@extends('template.layout')
+@section('content')
 <style>
     form {
         border: 3px solid #f1f1f1;
@@ -24,5 +26,4 @@
 </form>
 </div>
 </div>
-</body>
-</html>
+@endsection

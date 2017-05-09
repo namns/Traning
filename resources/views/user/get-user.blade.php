@@ -1,4 +1,6 @@
-@include('template/header')
+{{--@include('template/header')--}}
+@extends('template.layout')
+@section('content')
 <style>
     form {
         border: 3px solid #f1f1f1;
@@ -21,6 +23,6 @@
         @endforeach
     <input type="submit" value="edit" style="width: 50px;height: 30px;background: #00008B;color: #fff;border-radius: 5px;margin-top: 5px;margin-left: 200px;">
 </form>
-</body>
-
-</html>
+</div>
+</div>
+@endsection
