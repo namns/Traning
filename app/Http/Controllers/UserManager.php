@@ -10,17 +10,25 @@ use Illuminate\Support\Facades\DB;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class UserManager extends Controller
 {
     public function index()
     {
+        if(Auth::check()){
+            return redirect('/user');
+        }
         return view('user/login');
+
     }
     public function login(Request $request){
         $username = $request->input('username');
         $password = $request->input('password');
         if (Auth::attempt(['username' => $username, 'password' => $password])) {
+            DB::table('user')
+            ->where('id', Auth::user()->id)
+            ->update(['remember_token' => $request->_token]);
             return redirect('/user');
         }
     }
@@ -76,5 +84,9 @@ class UserManager extends Controller
                 "created" => $date,
             ]);
         return redirect('/user');
+    }
+    public function logout(){
+        Auth::logout();
+        return redirect('/');
     }
 }

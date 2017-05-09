@@ -15,8 +15,10 @@
 //    return view('welcome');
 //});
 Route::get('/', 'UserManager@index');
+Route::get('/logout',['as' => 'logout', 'uses' => 'UserManager@logout'] );
 Route::post('/login', ['as' => 'login', 'uses' => 'UserManager@login']);
 
+Route::group(['prefix' => '','middleware'=>'userMiddleware'], function () {
 //user
 Route::get('/user', ['as' => 'user', 'uses' => 'UserManager@user']);
 Route::get('/adduser', 'UserManager@adduser');
@@ -32,7 +34,7 @@ Route::post('/addpost', ['as' => 'add-post', 'uses' => 'ManagerPosts@addpost']);
 Route::post('/editpost', ['as' => 'edit-post', 'uses' => 'ManagerPosts@editpost']);
 Route::post('/delete', 'ManagerPosts@delete');
 Route::post('/copy', 'ManagerPosts@copy');
-
+});
 /*
 |--------------------------------------------------------------------------
 | Application Routes

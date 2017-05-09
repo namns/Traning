@@ -70,9 +70,10 @@
 
 <h2 style="text-align: center">Login Form</h2>
 
-<form action="{{ route('login') }}" method="post">
+<form action="{{ route('login') }}" method="post" role="form">
 
     <div class="container">
+        <input type="hidden" name="_token" value="{!! csrf_token() !!}">
         <label><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="username" required>
 

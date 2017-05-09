@@ -50,6 +50,7 @@
             <li><a class="active" href="/user">User</a></li>
             <li><a href="/post">Post</a></li>
         </ul>
+        <a href="{{ route('logout') }}" style="float: right;padding-top: 5px;background:#4caf50;width: 80px;height: 30px;text-align: center;margin-top: 10px;margin-right: 30px;">logout</a>
 {{--phan extend--}}
 @yield('content')
 <footer>
@@ -60,5 +61,4 @@
         <p><strong>Note:</strong> The footer tag is not supported in Internet Explorer 8 and earlier versions.</p>
 </footer>
 </body>
-
 </html>
