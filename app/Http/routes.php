@@ -18,6 +18,7 @@ Route::get('/', 'UserManager@index');
 Route::get('/logout',['as' => 'logout', 'uses' => 'UserManager@logout'] );
 Route::post('/login', ['as' => 'login', 'uses' => 'UserManager@login']);
 
+Route::get('lang/{locale}', 'LanguageController@index');
 Route::group(['prefix' => '','middleware'=>'userMiddleware'], function () {
 //user
 Route::get('/user', ['as' => 'user', 'uses' => 'UserManager@user']);
